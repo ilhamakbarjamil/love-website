@@ -181,7 +181,7 @@ const LoveWebsite = () => {
                   Kamu adalah inspirasi dalam setiap langkahku.
                   Terima kasih telah menjadi yang terbaik dalam hidupku.
                 </p>
-                <p className="text-pink-500 mt-4">- Akbras</p>
+                <p className="text-pink-500 mt-4">-Bagas</p>
               </div>
             </div>
           </div>
@@ -224,8 +224,8 @@ const LoveWebsite = () => {
       <footer className="bg-pink-100 py-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <Heart className="w-8 h-8 text-pink-500 mx-auto mb-4" />
-          <p className="text-gray-600 mb-2">Made with love by akbar</p>
-          <p className="text-sm text-gray-500">© 2024 Our Love Story</p>
+          <p className="text-gray-600 mb-2">Made with love by bagas</p>
+          <p className="text-sm text-gray-500">© 2024 Selamat Ulang Tahun</p>
         </div>
       </footer>
     </div>
