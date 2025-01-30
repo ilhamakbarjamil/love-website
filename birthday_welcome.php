@@ -3,74 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Elegant Birthday Celebration</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        .bg-cover {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+        .font-great-vibes {
+            font-family: 'Great Vibes', cursive;
         }
-        .bg-gradient {
-            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .animate-bounce-slow {
-            animation: bounce 3s infinite;
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(-10%);
-                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-            }
-            50% {
-                transform: translateY(0);
-                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-            }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .decorative-border {
+            position: relative;
+            padding: 2rem;
+        }
+        
+        .decorative-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
     </style>
 </head>
-<body class="bg-cover bg-gradient">
-    <div class="flex flex-col items-center justify-center min-h-screen bg-black bg-opacity-50 px-4">
-        <div class="text-center text-white p-8 rounded-lg shadow-2xl bg-opacity-75 bg-gray-800 transform transition-transform duration-500 hover:scale-105 mb-8">
-            <div class="mb-6 animate-bounce-slow">
-                <img src="path-to-your-image.png" alt="Birthday Icon" class="mx-auto w-24 h-24">
+<body class="gradient-bg min-h-screen">
+
+    <!-- Header Section -->
+    <header class="relative py-16 text-center overflow-hidden">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative z-10">
+            <h1 class="font-great-vibes text-6xl text-white mb-4">Happy Birthday</h1>
+            <p class="text-xl text-white/90 italic">A Celebration of Wonderful You</p>
+            <div class="mt-8 floating">
+                <svg class="w-24 h-24 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
             </div>
-            <h1 class="text-6xl font-bold mb-4 animate-pulse">Happy Birthday!</h1>
-            <p class="text-3xl mb-6">Today is your special day. Enjoy every moment!</p>
-            <form action="greeting.php" method="GET">
-                <input type="text" name="name" class="border border-gray-300 p-3 rounded-lg w-full mb-4 focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Enter your name" required>
-                <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg w-full hover:bg-blue-700 transition duration-300">Proceed to Your Greeting</button>
-            </form>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+
+        <!-- Greeting Card -->
+        <div class="glass-card p-8 mb-12 transform transition duration-500 hover:scale-102">
+            <div class="decorative-border">
+                <h2 class="font-great-vibes text-4xl text-center text-purple-800 mb-8">Your Special Day</h2>
+                <form class="space-y-6">
+                    <div class="relative">
+                        <input type="text" 
+                               class="w-full px-4 py-3 rounded-lg bg-white/80 border border-gray-200 focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+                               placeholder="Your Beautiful Name">
+                        <svg class="absolute right-3 top-3 w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-purple-600 to-blue-500 text-white py-3 rounded-lg hover:from-purple-700 hover:to-blue-600 transition-all">
+                        Begin Celebration
+                    </button>
+                </form>
+            </div>
         </div>
 
-        <!-- Additional Content to Make the Page Longer -->
-        <div class="text-center text-white p-8 rounded-lg shadow-2xl bg-opacity-75 bg-gray-800 transform transition-transform duration-500 hover:scale-105 mb-8">
-            <h2 class="text-4xl font-bold mb-4">Birthday Wishes</h2>
-            <p class="text-xl mb-6">Here are some heartfelt birthday wishes from your friends and family:</p>
-            <ul class="text-left max-w-2xl mx-auto">
-                <li class="mb-4">"Wishing you all the happiness in the world on your special day!" - John</li>
-                <li class="mb-4">"May your birthday be filled with joy and laughter. Happy Birthday!" - Sarah</li>
-                <li class="mb-4">"Sending you lots of love and warm wishes on your birthday!" - Emily</li>
-                <li class="mb-4">"Have an amazing birthday and a fantastic year ahead!" - Michael</li>
-            </ul>
+        <!-- Wishes Section -->
+        <div class="grid gap-8 md:grid-cols-2">
+            <!-- Wishes Card -->
+            <div class="glass-card p-6 transform transition duration-500 hover:scale-102">
+                <h3 class="text-2xl font-semibold text-purple-800 mb-4">Heartfelt Wishes</h3>
+                <div class="space-y-4 text-gray-700">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="ml-3"><span class="font-medium">Sarah:</span> "May your day sparkle with joy!"</p>
+                    </div>
+                    <!-- More wishes... -->
+                </div>
+            </div>
+
+            <!-- Activities Card -->
+            <div class="glass-card p-6 transform transition duration-500 hover:scale-102">
+                <h3 class="text-2xl font-semibold text-purple-800 mb-4">Celebration Ideas</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>Sunset Champagne Toast</span>
+                    </li>
+                    <!-- More activities... -->
+                </ul>
+            </div>
         </div>
 
-        <div class="text-center text-white p-8 rounded-lg shadow-2xl bg-opacity-75 bg-gray-800 transform transition-transform duration-500 hover:scale-105 mb-8">
-            <h2 class="text-4xl font-bold mb-4">Birthday Stories</h2>
-            <p class="text-xl mb-6">Here's a short story to celebrate your birthday:</p>
-            <p class="text-left max-w-2xl mx-auto">Once upon a time, in a land far away, there was a small village where everyone celebrated birthdays with great joy and excitement. On each birthday, the village would gather to sing, dance, and share stories. It was a day filled with love and laughter, and the birthday person would be showered with gifts and well wishes. This tradition brought the village closer together and created memories that would last a lifetime. May your birthday be just as magical and memorable!</p>
+        <!-- Photo Gallery -->
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="aspect-w-1 aspect-h-1">
+                <img src="placeholder-1.jpg" class="w-full h-full object-cover rounded-xl shadow-lg">
+            </div>
+            <!-- More photos... -->
         </div>
 
-        <div class="text-center text-white p-8 rounded-lg shadow-2xl bg-opacity-75 bg-gray-800 transform transition-transform duration-500 hover:scale-105 mb-8">
-            <h2 class="text-4xl font-bold mb-4">Birthday Activities</h2>
-            <p class="text-xl mb-6">Here are some fun activities to make your birthday even more special:</p>
-            <ul class="text-left max-w-2xl mx-auto">
-                <li class="mb-4">- Have a picnic in the park with your favorite foods.</li>
-                <li class="mb-4">- Host a movie marathon with your best friends.</li>
-                <li class="mb-4">- Take a day trip to a nearby city or attraction.</li>
-                <li class="mb-4">- Enjoy a relaxing spa day at home or at a local spa.</li>
-            </ul>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-8 text-center text-white/80">
+        <p class="text-sm">Created with ♥ for Someone Special</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <svg class="w-6 h-6 hover:text-white transition" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/>
+            </svg>
+            <!-- More social icons... -->
         </div>
-    </div>
+    </footer>
+
 </body>
 </html>
